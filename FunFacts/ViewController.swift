@@ -11,19 +11,17 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var funFactLabel: UILabel!
-    
-    let facts = ["Ants stretch when they wake up in the morning", "Ostriches are faster than horses", "Stuffs"]
+    let factProvider = FactProvider()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        funFactLabel.text = facts[0]
-        
+        funFactLabel.text = factProvider.randomFact()
     }
-
     
     @IBAction func showFact() {
-        funFactLabel.text = facts[1]
+        
+        funFactLabel.text = factProvider.randomFact()
     }
     
 }
